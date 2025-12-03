@@ -60,3 +60,37 @@ Temporary Items
 
 # GMRT build directory
 Build
+
+# Meus ignore
+
+# Pastas de build e temporárias
+.extensions/
+output/
+cache/
+temp/
+
+# Arquivos de backup
+*.yy.old
+*.backup
+*.log
+
+# Pasta que muda conforme a máquina e causa conflitos
+options/
+
+# Builds exportadas
+*.zip
+*.gmz
+*.exe
+*.apk
+*.aab
+*.ios
+*.nvproj
+
+# Arquivos gerados pelo IDE
+*.iml
+.idea/
+.vscode/
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
