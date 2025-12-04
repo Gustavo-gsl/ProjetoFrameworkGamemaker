@@ -39,7 +39,7 @@ if (_chao){
 	
 	} else{
 	
-		sprite_index = spr_player_fall
+		sprite_index = spr_player_fall;
 	
 	}
 
