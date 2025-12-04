@@ -24,21 +24,26 @@ if (_col){
 
 x += velh;
 
+//Colisão vertical
+//Checanco colisão com o chão ou teto
 _col	= instance_place(x, y + velv, obj_chao);
 if (_col){
 	
+	//Se estou caindo, grudo acima
 	if (velv > 0){
 		
 		y = _col.bbox_top + (y - bbox_bottom);
 		
 	}
 	
+	//Se estou pulando, grudo abaixo
 	if (velv < 0){
 		
 		y = _col.bbox_bottom + (y - bbox_top);
 		
 	}
 	
+	//Como colidi, parei
 	velv = 0;
 	
 }
