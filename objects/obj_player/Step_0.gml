@@ -21,6 +21,6 @@ if(_chao){
 } else{
 
 	//Aplicando gravidade
-	velv	+= grav;
+	velv += grav;
 	
 }
