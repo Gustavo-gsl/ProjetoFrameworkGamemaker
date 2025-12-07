@@ -56,5 +56,14 @@ if (momento == "off"){
 	
 	}
 	
+	var _bomba = instance_place(x,y, obj_bomba);
+	if(_bomba){
+		if(_bomba.momento == "off"){
+		_bomba.boom_timer = room_speed;
+		_bomba.momento = "on";	
+	
+		}
+	}
+	
 
 }

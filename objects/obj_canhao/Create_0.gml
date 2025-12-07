@@ -1,4 +1,5 @@
 estado = "idle";
+criei_bala = false;
 tempo_tiro = room_speed *5;
 timer_tiro = tempo_tiro;
 
