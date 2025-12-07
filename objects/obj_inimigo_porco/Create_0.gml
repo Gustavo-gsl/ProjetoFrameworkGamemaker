@@ -5,6 +5,7 @@ event_inherited();
 //Ele decide se vai para a direita ou para a esquerda
 
 vel = choose(1, -1);
+estado = "normal";
 
 andando = choose(true, false);
 
