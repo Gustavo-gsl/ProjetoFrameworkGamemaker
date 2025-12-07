@@ -16,7 +16,9 @@ muda_sprite(spr_canhao_on);
 	
 		estado = "espera";	
 		
-		var _bola = instance_create_layer(x,y))
+		var _bola = instance_create_layer(x,y, layer, obj_bola);
+		_bola.velh = -4;
+		
 	}
 	
 break;
