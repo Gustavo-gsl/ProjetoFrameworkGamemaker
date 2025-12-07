@@ -50,15 +50,17 @@ if (_chao){
 		
 		// Se eu cair no inimigo
 		if (_inimigo){
-			dano = false;	
-			//Se o inimigo não morreu
-			if(_inimigo.morto == false){
-		
-			// subir no ar
-			velv = -vel_jump;
 			
-			//Avisando que o inimigo sofreu dano
-			_inimigo.dano = true;
+			dano = false;	
+			
+			//Se o inimigo não morreu
+			if(_inimigo.dano == false){
+		
+				// subir no ar
+				velv = -vel_jump;
+			
+				//Avisando que o inimigo sofreu dano
+				_inimigo.dano = true;
 		
 			}
 		}	
@@ -76,21 +78,49 @@ if (_chao){
 }
 
 
-if ( dano){
+if (dano){
+	
 	sprite_index = spr_player_hit;
-	timer_dano --;
+	
+}
+
+//Diminuir o timer de dano se for maior que zero
+if (timer_dano > 0){
+
+	timer_dano--;
+
+} else{
+
+	//Fim do timer de dano
+	dano = false;
+
+}
+
+if (inv_timer > 0){
+
+	inv_timer--;
+	
+	image_alpha = .5;
+
+} else{
+
+	image_alpha = 1;
+
 }
 
 // Tomando dano
 
-var _inimigo = instance_place( x,y, obj_inimigo_pai);
+var _inimigo = instance_place( x, y, obj_inimigo_pai);
 
-if (_inimigo){
-	
-	// valor timer dano
-	timer_dano = tempo_dano;
+if (_inimigo && inv_timer <= 0){
+		
 	if(_inimigo.morto == false && _inimigo.dano == false){
 		
 		dano = true;
+		
+		// valor timer dano
+		timer_dano = tempo_dano;
+		inv_timer = inv_tempo;
+		
 	}	
 }
