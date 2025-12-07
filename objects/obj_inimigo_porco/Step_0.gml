@@ -38,6 +38,16 @@ if (estado == "normal")
 		}
 	
 	}
+	
+	var _canhao = instance_place(x,y, obj_canhao);
+	
+	if(_canhao){
+		
+		if(_canhao.estado == "idle"){
+		
+		estado = "fosforo_on";
+		}
+	}
 
 	if (_chao)
 	{	
@@ -140,7 +150,13 @@ else if (estado == "fosforo_bomba")
 			_bomba.momento = "on";
 		}
 		estado = "normal";
-	}
+		
+		var _canhao = instance_place(x,y,obj_canhao);
+		if(_canhao){
+		_canhao.estado = "on";
+		}
+		estado = "normal";
+	} 
 }
 if (dano && morto == false)
 {
