@@ -40,6 +40,19 @@ if (_chao){
 	} else{
 	
 		sprite_index = spr_player_fall;
+		
+		//Se estou indo para baixo, posso cair na cabeça do inimigo
+		var _inimigo = instance_place(x, y + 1, obj_inimigo_pai);
+		
+		//Se cair no inimigo
+		if (_inimigo && _inimigo.morto == false){
+		
+			velv = -vel_jump;
+			
+			//Avisando que o inimigo sofreu dano
+			_inimigo.dano = true;
+		
+		}
 	
 	}
 

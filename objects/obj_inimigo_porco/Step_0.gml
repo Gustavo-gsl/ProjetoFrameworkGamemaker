@@ -1,3 +1,25 @@
+if (morto){
+	
+	sprite_index = spr_inimigo_porco_dead;
+	
+	//Sumindo se a animação acabou
+	if (image_speed <= 0){
+	
+		image_alpha -= 0.01;
+	
+	}
+	
+	if (image_alpha <= 0){
+		
+		instance_destroy();
+		
+	}
+	
+	exit;	
+	
+}
+
+
 //Verificando se o porco esta no chão
 var _chao = place_meeting(x, y + 1, obj_chao)
 
@@ -27,7 +49,7 @@ if (_chao)
 	}
 	
 	//Controlando a animação do inimigo
-	if (velh != 0)
+	if (velh != 0 && dano == false)
 	{
 		sprite_index = spr_inimigo_porco_run;
 		image_xscale = sign(velh);
@@ -42,6 +64,16 @@ if (_chao)
 	{
 		velh *= -1;	
 	}
+	
+	if (pode_cair == false){
+	
+		if (place_meeting(x + (velh * 13), y + 1, obj_chao) == false){
+			
+			velh *= -1;
+			
+		}
+	
+	}
 
 }
 else
@@ -54,4 +86,13 @@ else
 	{
 		image_xscale = sign(velh);
 	}
+}
+
+//Checar se estou tomando dano
+if (dano && morto == false){
+
+	sprite_index = spr_inimigo_porco_dano;
+	velh = 0;
+	
+
 }
