@@ -81,6 +81,11 @@ if (_chao){
 if (dano){
 	
 	sprite_index = spr_player_hit;
+	if(posso_perder_vida)
+	{
+		global.vida--;
+		posso_perder_vida = false;
+	}
 	
 }
 
@@ -93,7 +98,7 @@ if (timer_dano > 0){
 
 	//Fim do timer de dano
 	dano = false;
-
+	posso_perder_vida = true;
 }
 
 if (inv_timer > 0){
@@ -117,7 +122,6 @@ if (_inimigo && inv_timer <= 0){
 	if(_inimigo.morto == false && _inimigo.dano == false){
 		
 		dano = true;
-		
 		// valor timer dano
 		timer_dano = tempo_dano;
 		inv_timer = inv_tempo;

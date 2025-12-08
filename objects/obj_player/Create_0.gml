@@ -4,6 +4,7 @@ vel			= 4;
 vel_jump	= 7;
 grav		= .3;
 
+posso_perder_vida = true;
 dano		= false;
 tempo_dano	= room_speed * 0.5;
 timer_dano	= 0;
