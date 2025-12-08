@@ -1,0 +1,1 @@
+draw_sprite(spr_pausebutton, 0, 20, 20);

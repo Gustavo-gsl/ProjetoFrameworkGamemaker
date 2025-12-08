@@ -1,3 +1,18 @@
+//Pausando elemento
+if (global.paused) {
+	
+	velh = 0;
+	velv = 0;
+	
+    image_speed = 0;
+    exit;
+	
+} else {
+	
+    image_speed = 1;
+	
+}
+
 //Verificando colisão com o chão
 var _chao = place_meeting(x, y + 1, obj_chao)
 
@@ -85,6 +100,7 @@ if (estado == "dead")
 	timer_reinicia--;
 	if (timer_reinicia <= 0)
 	{
+		global.vida = global.max_vida;
 		game_restart();	
 	}
 	

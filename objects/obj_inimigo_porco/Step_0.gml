@@ -1,11 +1,26 @@
+//Pausando elemento
+if (global.paused == true) {
+	
+	velh = 0;
+	velv = 0;
+	
+    image_speed = 0;
+    exit;
+	
+} else {
+	
+    image_speed = 1;
+	
+}
+
 if (morto){
 	
 	sprite_index = spr_inimigo_porco_dead;
 	
 	//Sumindo se a animação acabou
-	if (image_speed <= 0){
+	if (image_index == 3){
 	
-		image_alpha -= 0.01;
+		image_alpha -= 0.1;
 	
 	}
 	
@@ -158,6 +173,7 @@ else if (estado == "fosforo_bomba")
 		estado = "normal";
 	} 
 }
+
 if (dano && morto == false)
 {
 	sprite_index = spr_inimigo_porco_dano;

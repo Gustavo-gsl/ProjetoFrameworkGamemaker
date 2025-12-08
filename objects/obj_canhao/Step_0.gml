@@ -1,3 +1,18 @@
+//Pausando elemento
+if (global.paused) {
+	
+	velh = 0;
+	velv = 0;
+	
+    image_speed = 0;
+    exit;
+	
+} else {
+	
+    image_speed = 1;
+	
+}
+
 switch(estado){
 	
 case "idle":
