@@ -8,7 +8,7 @@ _left	= keyboard_check(inputs.left);
 _right	= keyboard_check(inputs.right);
 _jump	= keyboard_check(inputs.jump);
 
-// so´pode se mexer se o timer do dano estiver zerado
+// só pode se mexer se o timer do dano estiver zerado
 if(timer_dano <= 0){
 	
 velh	= (_right - _left) * vel;
@@ -77,14 +77,42 @@ if (_chao){
 	
 }
 
+// Morte
+if (estado == "dead")
+{
+    sprite_index = spr_player_dead;
+	
+	timer_reinicia--;
+	if (timer_reinicia <= 0)
+	{
+		game_restart();	
+	}
+	
+    image_speed = 0.2;
+
+    // trava no último frame depois que termina a animação
+    if (image_index >= image_number - 1)
+        image_speed = 0;
+
+    exit; // impede o resto do step de mudar o sprite
+}
 
 if (dano){
 	
 	sprite_index = spr_player_hit;
+	velh = 0;
 	if(posso_perder_vida)
 	{
 		global.vida--;
-		posso_perder_vida = false;
+		
+		if (global.vida <= 0)
+		{
+			estado = "dead";	
+		}
+		else
+		{
+			posso_perder_vida = false;
+		}
 	}
 	
 }

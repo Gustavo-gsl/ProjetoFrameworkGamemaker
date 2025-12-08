@@ -74,6 +74,7 @@
     {"id":{"name":"spr_inimigo_porco_idle","path":"sprites/spr_inimigo_porco_idle/spr_inimigo_porco_idle.yy",},},
     {"id":{"name":"spr_inimigo_porco_run","path":"sprites/spr_inimigo_porco_run/spr_inimigo_porco_run.yy",},},
     {"id":{"name":"spr_level","path":"sprites/spr_level/spr_level.yy",},},
+    {"id":{"name":"spr_player_dead","path":"sprites/spr_player_dead/spr_player_dead.yy",},},
     {"id":{"name":"spr_player_fall","path":"sprites/spr_player_fall/spr_player_fall.yy",},},
     {"id":{"name":"spr_player_hit","path":"sprites/spr_player_hit/spr_player_hit.yy",},},
     {"id":{"name":"spr_player_idle","path":"sprites/spr_player_idle/spr_player_idle.yy",},},
